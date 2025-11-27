@@ -1,0 +1,83 @@
+/* .bg-banner-dot{
+    background-image: url('../img/banner.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 700px;
+} */
+.bg-banner-dot {
+  position: relative;
+  cursor: pointer;
+}
+
+.banner-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.banner-img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Dot style */
+.dot {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  background: #ff4d4d;
+  border-radius: 50%;
+  cursor: pointer;
+
+  /* Soft center glow */
+  box-shadow: 0 0 10px rgba(255, 77, 77, 0.8);
+
+  /* Blinking outer ring */
+  animation: pulseRing 1.5s infinite ease-out;
+}
+
+/* Outer Ring Animation */
+@keyframes pulseRing {
+  0% {
+    box-shadow: 
+      0 0 10px rgba(255, 77, 77, 0.8),
+      0 0 0 0 rgba(255, 77, 77, 0.6);
+  }
+  70% {
+    box-shadow: 
+      0 0 15px rgba(255, 77, 77, 0.9),
+      0 0 0 12px rgba(255, 77, 77, 0);
+  }
+  100% {
+    box-shadow: 
+      0 0 10px rgba(255, 77, 77, 0.8),
+      0 0 0 0 rgba(255, 77, 77, 0);
+  }
+}
+
+/* Popup Image */
+.popup-img {
+  position: absolute;
+  width: 420px;
+  height: auto;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  visibility: hidden;
+  z-index: 10;
+  border-radius: 8px;
+  padding: 4px;
+  transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+}
+
+/* Show smoothly on hover */
+.dot:hover .popup-img {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Dot Positions */
+.dot-1 { top: 39%; left: 29%; }
+.dot-2 { top: 48%; left: 40%; }
+.dot-3 { top: 40%; left: 74%; }
